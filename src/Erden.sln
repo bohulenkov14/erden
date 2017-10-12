@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26923.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Cqrs", "Erden.Cqrs\Erden.Cqrs.csproj", "{276E46A3-9870-4D3B-ADCE-5AC7B0A6E84B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{3F446F85-B8FF-4CE9-B8C4-488879AEDC37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Cqrs.Example.Application", "..\examples\Erden.Cqrs.Example.Application\Erden.Cqrs.Example.Application.csproj", "{1E2A9796-3848-4D7D-BFEF-804A4BC67074}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{276E46A3-9870-4D3B-ADCE-5AC7B0A6E84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{276E46A3-9870-4D3B-ADCE-5AC7B0A6E84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{276E46A3-9870-4D3B-ADCE-5AC7B0A6E84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2A9796-3848-4D7D-BFEF-804A4BC67074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2A9796-3848-4D7D-BFEF-804A4BC67074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2A9796-3848-4D7D-BFEF-804A4BC67074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2A9796-3848-4D7D-BFEF-804A4BC67074}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1E2A9796-3848-4D7D-BFEF-804A4BC67074} = {3F446F85-B8FF-4CE9-B8C4-488879AEDC37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EDEFB39-CC21-4E59-A8EC-E1E77BA8B447}
