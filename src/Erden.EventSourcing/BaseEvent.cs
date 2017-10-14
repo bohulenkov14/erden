@@ -10,7 +10,7 @@ namespace Erden.EventSourcing
     /// </summary>
     public abstract class BaseEvent : IEvent
     {
-        public BaseEvent(Guid entityId, Version version = Version.Any)
+        public BaseEvent(Guid entityId, long version = (long)EventSourcing.Version.Any)
         {
             Id = Guid.NewGuid();
             EntityId = entityId;
@@ -22,7 +22,7 @@ namespace Erden.EventSourcing
         [JsonProperty("entity_id")]
         public Guid EntityId { get; private set; }
         [JsonProperty("version")]
-        public Version Version { get; private set; }
+        public long Version { get; private set; }
         [JsonProperty("timestamp")]
         public long Timestamp { get; private set; }
 

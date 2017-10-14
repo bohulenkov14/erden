@@ -19,7 +19,7 @@ namespace Erden.EventSourcing
         /// <summary>
         /// Entity version
         /// </summary>
-        Version Version { get; }
+        long Version { get; }
         /// <summary>
         /// Timestamp
         /// </summary>

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Cqrs.Example.Applicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.EventSourcing", "Erden.EventSourcing\Erden.EventSourcing.csproj", "{8A423998-39A9-4382-BE7A-61DB68C835F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Domain", "Erden.Domain\Erden.Domain.csproj", "{4232328F-FB55-4DD1-B4E2-32863EF1186A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{8A423998-39A9-4382-BE7A-61DB68C835F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A423998-39A9-4382-BE7A-61DB68C835F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A423998-39A9-4382-BE7A-61DB68C835F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4232328F-FB55-4DD1-B4E2-32863EF1186A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4232328F-FB55-4DD1-B4E2-32863EF1186A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4232328F-FB55-4DD1-B4E2-32863EF1186A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4232328F-FB55-4DD1-B4E2-32863EF1186A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
