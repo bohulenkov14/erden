@@ -45,6 +45,12 @@ namespace Erden.EventSourcing
             return this;
         }
 
+        public ESConfiguration UseTestEventStore()
+        {
+            services.AddSingleton<IEventStore, InMemoryEventStore>();
+            return this;
+        }
+
         public ESConfiguration WithAssembly(Assembly assembly)
         {
             assemblies.Add(assembly);
