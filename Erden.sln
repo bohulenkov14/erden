@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Cqrs.Tests", "tests\E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.EventSourcing.Tests", "tests\Erden.EventSourcing.Tests\Erden.EventSourcing.Tests.csproj", "{55E3A0B7-3270-46BD-869A-C1F9FC6336C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Domain.Tests", "tests\Erden.Domain.Tests\Erden.Domain.Tests.csproj", "{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{55E3A0B7-3270-46BD-869A-C1F9FC6336C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55E3A0B7-3270-46BD-869A-C1F9FC6336C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55E3A0B7-3270-46BD-869A-C1F9FC6336C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{1E2A9796-3848-4D7D-BFEF-804A4BC67074} = {3F446F85-B8FF-4CE9-B8C4-488879AEDC37}
 		{94A57ECE-71C1-465A-92EF-42B2F2A0074C} = {B6FE5C1B-C40B-48B9-A221-BC7BBA769C25}
 		{55E3A0B7-3270-46BD-869A-C1F9FC6336C6} = {B6FE5C1B-C40B-48B9-A221-BC7BBA769C25}
+		{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887} = {B6FE5C1B-C40B-48B9-A221-BC7BBA769C25}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EDEFB39-CC21-4E59-A8EC-E1E77BA8B447}
