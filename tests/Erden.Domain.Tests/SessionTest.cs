@@ -1,11 +1,11 @@
-﻿using Erden.EventSourcing;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+
 using Xunit;
+
+using Erden.EventSourcing;
 
 namespace Erden.Domain.Tests
 {
