@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Erden.EventSourcing\Erden.EventSourcing.csproj" />
+    <ProjectReference Include="..\Erden.EventSourcing\Erden.EventSourcing.csproj" />
   </ItemGroup>
 
 </Project>
