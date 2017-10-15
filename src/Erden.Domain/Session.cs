@@ -40,8 +40,9 @@ namespace Erden.Domain
         {
             if (trackingAggregates.TryGetValue(id, out var aggregate))
             {
-                return aggregate.Version == version ?
-                    aggregate as T : throw new ConcurrencyException(id);
+                if (version != -2 && aggregate.Version != version)
+                    throw new ConcurrencyException(id);
+                return aggregate as T;
             }
 
             aggregate = await storage.Get<T>(id, version);

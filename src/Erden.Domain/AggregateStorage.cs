@@ -31,7 +31,7 @@ namespace Erden.Domain
         private async Task<IEnumerable<IEvent>> LoadEvents(Guid id, long expectedVersion)
         {
             var events = await eventStore.Get(id);
-            if (events.Last().Version != expectedVersion)
+            if (expectedVersion != -2 && events.Last().Version != expectedVersion)
                 throw new ConcurrencyException(id);
 
             return events;
