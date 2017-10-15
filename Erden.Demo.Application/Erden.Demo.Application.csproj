@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Erden.Cqrs\Erden.Cqrs.csproj" />
+    <ProjectReference Include="..\src\Erden.Domain\Erden.Domain.csproj" />
+    <ProjectReference Include="..\src\Erden.EventSourcing.Targets.EventStore\Erden.EventSourcing.Targets.EventStore.csproj" />
+    <ProjectReference Include="..\src\Erden.EventSourcing\Erden.EventSourcing.csproj" />
+  </ItemGroup>
+
+</Project>
