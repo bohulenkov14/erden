@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventSourcing.Targets", "Ev
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.EventSourcing.Targets.EventStore", "src\Erden.EventSourcing.Targets.EventStore\Erden.EventSourcing.Targets.EventStore.csproj", "{1C480894-DD6E-453A-B23E-B60CF95E4B6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Demo.Application", "Erden.Demo.Application\Erden.Demo.Application.csproj", "{DBC79CA8-6BD6-416E-831A-2CEAC4D215EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Demo.Application", "examples\Erden.Demo.Application\Erden.Demo.Application.csproj", "{909C83F9-F6EC-404F-A55E-49CCB988E966}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +65,10 @@ Global
 		{1C480894-DD6E-453A-B23E-B60CF95E4B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C480894-DD6E-453A-B23E-B60CF95E4B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C480894-DD6E-453A-B23E-B60CF95E4B6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBC79CA8-6BD6-416E-831A-2CEAC4D215EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBC79CA8-6BD6-416E-831A-2CEAC4D215EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBC79CA8-6BD6-416E-831A-2CEAC4D215EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBC79CA8-6BD6-416E-831A-2CEAC4D215EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{909C83F9-F6EC-404F-A55E-49CCB988E966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{909C83F9-F6EC-404F-A55E-49CCB988E966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{909C83F9-F6EC-404F-A55E-49CCB988E966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{909C83F9-F6EC-404F-A55E-49CCB988E966}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,7 +79,7 @@ Global
 		{55E3A0B7-3270-46BD-869A-C1F9FC6336C6} = {B6FE5C1B-C40B-48B9-A221-BC7BBA769C25}
 		{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887} = {B6FE5C1B-C40B-48B9-A221-BC7BBA769C25}
 		{1C480894-DD6E-453A-B23E-B60CF95E4B6C} = {149C55DC-F3F0-4DBB-AA16-EF31280AF832}
-		{DBC79CA8-6BD6-416E-831A-2CEAC4D215EF} = {3F446F85-B8FF-4CE9-B8C4-488879AEDC37}
+		{909C83F9-F6EC-404F-A55E-49CCB988E966} = {3F446F85-B8FF-4CE9-B8C4-488879AEDC37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EDEFB39-CC21-4E59-A8EC-E1E77BA8B447}

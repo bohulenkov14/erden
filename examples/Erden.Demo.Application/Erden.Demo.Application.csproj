@@ -17,10 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Erden.Cqrs\Erden.Cqrs.csproj" />
-    <ProjectReference Include="..\src\Erden.Domain\Erden.Domain.csproj" />
-    <ProjectReference Include="..\src\Erden.EventSourcing.Targets.EventStore\Erden.EventSourcing.Targets.EventStore.csproj" />
-    <ProjectReference Include="..\src\Erden.EventSourcing\Erden.EventSourcing.csproj" />
+    <ProjectReference Include="..\..\src\Erden.Cqrs\Erden.Cqrs.csproj" />
+    <ProjectReference Include="..\..\src\Erden.Domain\Erden.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Erden.EventSourcing.Targets.EventStore\Erden.EventSourcing.Targets.EventStore.csproj" />
+    <ProjectReference Include="..\..\src\Erden.EventSourcing\Erden.EventSourcing.csproj" />
   </ItemGroup>
 
 </Project>
