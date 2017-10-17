@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Erden.Domain.Exceptions;
 using Erden.Domain.Infrastructure;
 using Erden.EventSourcing;
+using System.Linq;
 
 namespace Erden.Domain
 {
@@ -32,8 +33,9 @@ namespace Erden.Domain
             return changes;
         }
 
-        protected void ApplyChange(IEvent @event)
+        protected void ApplyChange<T>(params object[] args)
         {
+            var @event = Activator.CreateInstance(typeof(T), args.Concat(new object[] { Version + 1 }).ToArray()) as IEvent;
             ApplyChange(@event, true);
         }
 

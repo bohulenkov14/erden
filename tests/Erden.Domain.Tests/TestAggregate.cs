@@ -11,14 +11,14 @@ namespace Erden.Domain.Tests
 
         public TestAggregate(Guid id, string testProperty)
         {
-            ApplyChange(new TestAggregateCreatedEvent(id, testProperty));
+            ApplyChange<TestAggregateCreatedEvent>(id, testProperty);
         }
 
         public string TestProperty { get; private set; }
 
         public void ChangeTestProperty(string newTestPropertyValue)
         {
-            ApplyChange(new TestPropertyChangedEvent(Id, newTestPropertyValue, Version + 1));
+            ApplyChange<TestPropertyChangedEvent>(Id, newTestPropertyValue);
         }
 
         private void Apply(TestAggregateCreatedEvent @event)
@@ -35,8 +35,8 @@ namespace Erden.Domain.Tests
 
     internal sealed class TestAggregateCreatedEvent : BaseEvent
     {
-        public TestAggregateCreatedEvent(Guid entityId, string testProperty)
-            : base(entityId, 0)
+        public TestAggregateCreatedEvent(Guid entityId, string testProperty, long version)
+            : base(entityId, version)
         {
             TestProperty = testProperty;
         }

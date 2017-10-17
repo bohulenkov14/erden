@@ -38,7 +38,7 @@ namespace Erden.Domain.Tests
             var id = Guid.NewGuid();
 
             var eventstore = provider.GetService<IEventStore>();
-            await eventstore.Add(new TestAggregateCreatedEvent(id, "Ipsum"), 0);
+            await eventstore.Add(new TestAggregateCreatedEvent(id, "Ipsum", 0), 0);
             await eventstore.Add(new TestPropertyChangedEvent(id, "Lorem", 1), 1);
 
             var storage = provider.GetService<IAggregateStorage>();
