@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.EventSourcing.Targets
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Demo.Application", "examples\Erden.Demo.Application\Erden.Demo.Application.csproj", "{909C83F9-F6EC-404F-A55E-49CCB988E966}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Configuration", "src\Erden.Configuration\Erden.Configuration.csproj", "{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{909C83F9-F6EC-404F-A55E-49CCB988E966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{909C83F9-F6EC-404F-A55E-49CCB988E966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{909C83F9-F6EC-404F-A55E-49CCB988E966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

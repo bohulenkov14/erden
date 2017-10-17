@@ -13,6 +13,7 @@ using System.Reflection;
 using Erden.EventSourcing;
 using Erden.Domain;
 using Erden.EventSourcing.Targets.EventStore;
+using Erden.Configuration;
 
 namespace Erden.Demo.Application
 {
@@ -36,7 +37,14 @@ namespace Erden.Demo.Application
             OptionsConfigurationServiceCollectionExtensions.Configure<EventStoreSettings>(services, Configuration.GetSection("EventStore"));
             services.AddMvc();
 
-            new ESConfiguration(services)
+            var erden = new ErdenConfig(services)
+                .UseDefaultCommandBus()
+                .UseDefaultDataStorage()
+                .UseDefaultEventBus()
+                .AddEventStoreTarget<EventStoreTarget>();
+            erden.Build();
+
+            /*new ESConfiguration(services)
                 .UseDefaultEventBus()
                 .WithAssembly(typeof(Startup).GetTypeInfo().Assembly)
                 .Build();
@@ -49,7 +57,7 @@ namespace Erden.Demo.Application
                 .UseDefaultCommandBus()
                 .UseDefaultDataStorage()
                 .WithAssembly(typeof(Startup).GetTypeInfo().Assembly);
-            cqrs.Build();
+            cqrs.Build();*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

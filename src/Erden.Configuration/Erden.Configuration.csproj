@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Erden.Cqrs\Erden.Cqrs.csproj" />
+    <ProjectReference Include="..\Erden.Domain\Erden.Domain.csproj" />
+    <ProjectReference Include="..\Erden.EventSourcing\Erden.EventSourcing.csproj" />
+  </ItemGroup>
+
+</Project>
