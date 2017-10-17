@@ -9,7 +9,7 @@ namespace Erden.Demo.Application.Events
 {
     public class OrderOpenedEvent : BaseEvent
     {
-        public OrderOpenedEvent(Guid entityId, string position, int count) : base(entityId, 0)
+        public OrderOpenedEvent(Guid entityId, string position, int count, long version) : base(entityId, version)
         {
             Position = position;
             Count = count;

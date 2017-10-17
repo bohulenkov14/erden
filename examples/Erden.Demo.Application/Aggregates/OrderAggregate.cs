@@ -27,37 +27,37 @@ namespace Erden.Demo.Application.Aggregates
 
         public OrderAggregate(Guid id, string position, int count)
         {
-            ApplyChange(new OrderOpenedEvent(id, position, count));
+            ApplyChange<OrderOpenedEvent>(id, position, count);
         }
 
         public void Approve()
         {
-            ApplyChange(new OrderApprovedEvent(Id, Version + 1));
+            ApplyChange<OrderApprovedEvent>(Id);
         }
 
         public void Close()
         {
-            ApplyChange(new OrderClosedEvent(Id, Version + 1));
+            ApplyChange<OrderClosedEvent>(Id);
         }
 
         public void Complete()
         {
-            ApplyChange(new OrderCompletedEvent(Id, Version + 1));
+            ApplyChange<OrderCompletedEvent>(Id);
         }
 
         public void Decline()
         {
-            ApplyChange(new OrderDeclinedEvent(Id, Version + 1));
+            ApplyChange<OrderDeclinedEvent>(Id);
         }
 
         public void Reopen(int newCount)
         {
-            ApplyChange(new OrderReopenedEvent(Id, newCount, Version + 1));
+            ApplyChange<OrderReopenedEvent>(Id, newCount);
         }
 
         public void SetResponsible(Guid responsibleId)
         {
-            ApplyChange(new OrderResponsibleSetEvent(Id, responsibleId, Version + 1));
+            ApplyChange<OrderResponsibleSetEvent>(Id, responsibleId);
         }
 
         private void Apply(OrderOpenedEvent @event)
