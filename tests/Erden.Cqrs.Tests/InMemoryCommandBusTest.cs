@@ -76,11 +76,6 @@ namespace Erden.Cqrs.Tests
         }
 
         public TestEntity Entity { get; private set; }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 
     internal sealed class SecondTestCommand : BaseCommand
@@ -91,11 +86,6 @@ namespace Erden.Cqrs.Tests
         }
 
         public TestEntity Entity { get; private set; }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 
     internal sealed class FirstTestCommandHandler : ICommandHandler<FirstTestCommand>

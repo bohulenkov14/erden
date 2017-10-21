@@ -19,10 +19,5 @@ namespace Erden.Demo.Application.Events
         public string Position { get; set; }
         [JsonProperty("count")]
         public int Count { get; set; }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 }

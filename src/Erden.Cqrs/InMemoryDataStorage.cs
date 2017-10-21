@@ -13,7 +13,6 @@ namespace Erden.Cqrs
         {
             if (handlers.TryGetValue(query.GetType(), out var handler))
             {
-                query.Log();
                 return handler.DynamicInvoke(query) as Task<T>;
             }
 

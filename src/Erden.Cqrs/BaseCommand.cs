@@ -19,7 +19,5 @@ namespace Erden.Cqrs
         public Guid Id { get; private set; }
         [JsonProperty("timestamp")]
         public long Timestamp { get; private set; }
-
-        public abstract Task Log();
     }
 }

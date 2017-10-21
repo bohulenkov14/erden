@@ -62,21 +62,9 @@ namespace Erden.Cqrs.Tests
         }
     }
 
-    internal sealed class FirstTestQuery : BaseQuery<string>
-    {
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
-    }
+    internal sealed class FirstTestQuery : BaseQuery<string> { }
 
-    internal sealed class SecondTestQuery : BaseQuery<string>
-    {
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
-    }
+    internal sealed class SecondTestQuery : BaseQuery<string> { }
 
     internal sealed class FirstTestQueryHandler : IQueryHandler<FirstTestQuery, string>
     {

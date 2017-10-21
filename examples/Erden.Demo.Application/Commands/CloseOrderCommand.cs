@@ -9,10 +9,5 @@ namespace Erden.Demo.Application.Commands
     public class CloseOrderCommand : DomainCommand
     {
         public CloseOrderCommand(Guid entityId) : base(entityId) { }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 }

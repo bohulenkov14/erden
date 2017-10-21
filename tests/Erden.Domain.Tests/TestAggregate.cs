@@ -42,11 +42,6 @@ namespace Erden.Domain.Tests
         }
 
         public string TestProperty { get; private set; }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 
     internal sealed class TestPropertyChangedEvent : BaseEvent
@@ -58,10 +53,5 @@ namespace Erden.Domain.Tests
         }
 
         public string NewValue { get; private set; }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 }

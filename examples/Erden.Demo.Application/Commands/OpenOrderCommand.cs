@@ -23,10 +23,5 @@ namespace Erden.Demo.Application.Commands
         public string Position { get; private set; }
         [JsonProperty("count")]
         public int Count { get; private set; }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 }

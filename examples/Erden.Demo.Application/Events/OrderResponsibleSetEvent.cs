@@ -16,10 +16,5 @@ namespace Erden.Demo.Application.Events
 
         [JsonProperty("responsible_id")]
         public Guid ResponsibleId { get; set; }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 }

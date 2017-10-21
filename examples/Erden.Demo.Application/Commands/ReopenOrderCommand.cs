@@ -17,10 +17,5 @@ namespace Erden.Demo.Application.Commands
 
         [JsonProperty("new_count")]
         public int NewCount { get; set; }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 }

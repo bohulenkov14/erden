@@ -46,11 +46,6 @@ namespace Erden.EventSourcing.Tests
         public FirstTestEvent(Guid entityId, long version = -2)
             : base(entityId, version)
         { }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 
     internal sealed class SecondTestEvent : BaseEvent
@@ -58,11 +53,6 @@ namespace Erden.EventSourcing.Tests
         public SecondTestEvent(Guid entityId, long version = -2)
             : base(entityId, version)
         { }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 
     internal sealed class FirstTestEventHandler : IEventHandler<FirstTestEvent>

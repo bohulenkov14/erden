@@ -25,7 +25,6 @@ namespace Erden.Cqrs
             if (!handlers.TryGetValue(typeof(T), out var handler))
                 throw new Exception();
 
-            await command.Log();
             await handler.Invoke(command);
         }
     }

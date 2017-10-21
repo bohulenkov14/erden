@@ -16,10 +16,5 @@ namespace Erden.Cqrs
         /// Command timestamp
         /// </summary>
         long Timestamp { get; }
-
-        /// <summary>
-        /// Log command
-        /// </summary>
-        Task Log();
     }
 }

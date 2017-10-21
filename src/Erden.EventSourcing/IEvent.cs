@@ -24,10 +24,5 @@ namespace Erden.EventSourcing
         /// Timestamp
         /// </summary>
         long Timestamp { get; }
-
-        /// <summary>
-        /// Log event
-        /// </summary>
-        Task Log();
     }
 }

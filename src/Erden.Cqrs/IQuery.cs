@@ -17,10 +17,5 @@ namespace Erden.Cqrs
         /// Query timestamp
         /// </summary>
         long Timestamp { get; }
-
-        /// <summary>
-        /// Log query
-        /// </summary>
-        Task Log();
     }
 }

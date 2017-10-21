@@ -10,10 +10,5 @@ namespace Erden.Demo.Application.Events
         public OrderApprovedEvent(Guid entityId, long version = -2)
             : base(entityId, version)
         { }
-
-        public override Task Log()
-        {
-            return Task.CompletedTask;
-        }
     }
 }
