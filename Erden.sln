@@ -15,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Domain", "src\Erden.D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B6FE5C1B-C40B-48B9-A221-BC7BBA769C25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Cqrs.Tests", "tests\Erden.Cqrs.Tests\Erden.Cqrs.Tests.csproj", "{94A57ECE-71C1-465A-92EF-42B2F2A0074C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Cqrs.Tests", "tests\Erden.Cqrs.Tests\Erden.Cqrs.Tests.csproj", "{94A57ECE-71C1-465A-92EF-42B2F2A0074C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.EventSourcing.Tests", "tests\Erden.EventSourcing.Tests\Erden.EventSourcing.Tests.csproj", "{55E3A0B7-3270-46BD-869A-C1F9FC6336C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.EventSourcing.Tests", "tests\Erden.EventSourcing.Tests\Erden.EventSourcing.Tests.csproj", "{55E3A0B7-3270-46BD-869A-C1F9FC6336C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Domain.Tests", "tests\Erden.Domain.Tests\Erden.Domain.Tests.csproj", "{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Domain.Tests", "tests\Erden.Domain.Tests\Erden.Domain.Tests.csproj", "{CF4A17A0-1963-4CD3-A8A7-A9D0C5B15887}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventSourcing.Targets", "EventSourcing.Targets", "{149C55DC-F3F0-4DBB-AA16-EF31280AF832}"
 EndProject
@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.EventSourcing.Targets
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Demo.Application", "examples\Erden.Demo.Application\Erden.Demo.Application.csproj", "{909C83F9-F6EC-404F-A55E-49CCB988E966}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Configuration", "src\Erden.Configuration\Erden.Configuration.csproj", "{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Configuration", "src\Erden.Configuration\Erden.Configuration.csproj", "{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Dal", "src\Erden.Dal\Erden.Dal.csproj", "{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
