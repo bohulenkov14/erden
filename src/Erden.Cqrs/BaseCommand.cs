@@ -13,6 +13,7 @@ namespace Erden.Cqrs
         public BaseCommand()
         {
             Id = Guid.NewGuid();
+            Timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         }
 
         [JsonProperty("id")]

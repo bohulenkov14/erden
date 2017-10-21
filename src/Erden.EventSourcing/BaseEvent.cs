@@ -15,6 +15,7 @@ namespace Erden.EventSourcing
             Id = Guid.NewGuid();
             EntityId = entityId;
             Version = version;
+            Timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         }
 
         [JsonProperty("id")]

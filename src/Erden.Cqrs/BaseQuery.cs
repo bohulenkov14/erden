@@ -14,6 +14,7 @@ namespace Erden.Cqrs
         public BaseQuery()
         {
             Id = Guid.NewGuid();
+            Timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         }
 
         [JsonProperty("id")]
