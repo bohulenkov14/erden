@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Erden.Dal</PackageId>
+    <Title>Erden.Dal</Title>
+    <PackageVersion>1.0.0-rc2</PackageVersion>
+    <Authors>darvit</Authors>
+    <Description>DAL</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>Release candidate</PackageReleaseNotes>
+    <PackageTags>dal</PackageTags>
   </PropertyGroup>
 
 </Project>
