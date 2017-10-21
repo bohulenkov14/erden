@@ -2,15 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Erden.EventSourcing.Targets.EventStore</PackageId>
+    <Title>Erden.EventSourcing.Targets.EventStore</Title>
+    <PackageVersion>1.0.0-rc1</PackageVersion>
+    <Authors>darvit</Authors>
+    <Description>EventStore target</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>Release candidate</PackageReleaseNotes>
+    <PackageTags>es event sourcing EventStore</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Erden.EventSourcing" Version="1.0.0-rc1" />
     <PackageReference Include="EventStore.ClientAPI.NetCore" Version="4.0.2-rc" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Erden.EventSourcing\Erden.EventSourcing.csproj" />
   </ItemGroup>
 
 </Project>

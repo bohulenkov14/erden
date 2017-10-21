@@ -2,12 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>Erden.Configuration</PackageId>
+    <Title>Erden.Configuration</Title>
+    <PackageVersion>1.0.0-rc2</PackageVersion>
+    <Authors>darvit</Authors>
+    <Description>Erden config</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>Release candidate</PackageReleaseNotes>
+    <PackageTags>erden</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Erden.Cqrs\Erden.Cqrs.csproj" />
-    <ProjectReference Include="..\Erden.Domain\Erden.Domain.csproj" />
-    <ProjectReference Include="..\Erden.EventSourcing\Erden.EventSourcing.csproj" />
+    <PackageReference Include="Erden.Cqrs" Version="1.0.0-rc1" />
+    <PackageReference Include="Erden.Dal" Version="1.0.0-rc1" />
+    <PackageReference Include="Erden.Domain" Version="1.0.0-rc1" />
+    <PackageReference Include="Erden.EventSourcing" Version="1.0.0-rc1" />
   </ItemGroup>
 
 </Project>
