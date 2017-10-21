@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyModel;
 
 using Erden.Cqrs;
+using Erden.Dal;
 using Erden.Domain;
 using Erden.EventSourcing;
 
@@ -39,6 +40,8 @@ namespace Erden.Configuration
             registrator.Register(typeof(IEventHandler<>), typeof(IEventHandlerRegistrator), "Handle");
             registrator.Register(typeof(ICommandHandler<>), typeof(ICommandHandlerRegistrator), "Execute");
             registrator.Register(typeof(IQueryHandler<,>), typeof(IQueryHandlerRegistrator), "Execute");
+            registrator.Register(typeof(IChangeHandler<>), typeof(IChangeHandlerRegistrator), "Execute");
+            registrator.Register(typeof(IFetchHandler<,>), typeof(IFetchHandlerRegistrator), "Execute");
         }
 
         public ErdenConfig AddEventStoreTarget<T>() where T : class, IEventStore
@@ -78,6 +81,22 @@ namespace Erden.Configuration
             return this;
         }
 
+        public ErdenConfig UseDefaultFetchSource()
+        {
+            var inMemoryStorage = new InMemoryStorage();
+            services.AddSingleton<IStorage>(provider => inMemoryStorage);
+            services.AddSingleton<IFetchHandlerRegistrator>(provider => inMemoryStorage);
+            return this;
+        }
+
+        public ErdenConfig UseDefaultChangeBus()
+        {
+            var inMemoryChangesBus = new InMemoryChangesBus();
+            services.AddSingleton<IChangesBus>(provider => inMemoryChangesBus);
+            services.AddSingleton<IChangeHandlerRegistrator>(provider => inMemoryChangesBus);
+            return this;
+        }
+
         /// <summary>
         /// Register command and query handlers
         /// </summary>
@@ -95,6 +114,12 @@ namespace Erden.Configuration
                             allInterfaces.Any(y =>
                                 y.GetTypeInfo().IsGenericType
                                 && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(IQueryHandler<,>)) ||
+                            allInterfaces.Any(y =>
+                                y.GetTypeInfo().IsGenericType
+                                && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(IChangeHandler<>)) ||
+                            allInterfaces.Any(y =>
+                                y.GetTypeInfo().IsGenericType
+                                && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(IFetchHandler<,>)) ||
                             allInterfaces.Any(y =>
                                 y.GetTypeInfo().IsGenericType
                                 && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(IEventHandler<>));
