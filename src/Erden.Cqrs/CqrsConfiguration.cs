@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 using Erden.Core;
 
@@ -16,10 +13,6 @@ namespace Erden.Cqrs
         /// DI container
         /// </summary>
         private readonly IServiceCollection services;
-        /// <summary>
-        /// Assemblies, where command and query handlers placed
-        /// </summary>
-        private readonly List<Assembly> assemblies = new List<Assembly>();
 
         public CqrsConfiguration(IServiceCollection services)
         {
@@ -31,24 +24,12 @@ namespace Erden.Cqrs
         /// </summary>
         public void Build()
         {
-            foreach (var assembly in assemblies)
-            {
-                RegisterHandlers(assembly);
-            }
+            var registrator = new AutoRegistrator(services);
+            registrator.AddHandlers(typeof(ICommandHandler<>));
+            registrator.AddHandlers(typeof(IQueryHandler<,>));
 
-            var registrator = new AutoRegistrator(services.BuildServiceProvider());
             registrator.Register(typeof(ICommandHandler<>), typeof(ICommandHandlerRegistrator), "Execute");
             registrator.Register(typeof(IQueryHandler<,>), typeof(IQueryHandlerRegistrator), "Execute");
-        }
-
-        /// <summary>
-        /// Add assembly, where command and query handlers placed
-        /// </summary>
-        /// <param name="assembly">Assembly</param>
-        public CqrsConfiguration WithAssembly(Assembly assembly)
-        {
-            assemblies.Add(assembly);
-            return this;
         }
 
         /// <summary>
@@ -72,25 +53,6 @@ namespace Erden.Cqrs
             services.AddSingleton<IDataStorage>(provider => inMemoryDataStorage);
             services.AddSingleton<IQueryHandlerRegistrator>(provider => inMemoryDataStorage);
             return this;
-        }
-
-        /// <summary>
-        /// Register command and query handlers
-        /// </summary>
-        /// <param name="assembly">Assembly for registration</param>
-        private void RegisterHandlers(Assembly assembly)
-        {
-            services.Scan(scan => scan
-                .FromAssemblies(assembly)
-                    .AddClasses(classes => classes.Where(x => {
-                        var allInterfaces = x.GetInterfaces();
-                        return
-                            allInterfaces.Any(y => y.GetTypeInfo().IsGenericType && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(ICommandHandler<>)) ||
-                            allInterfaces.Any(y => y.GetTypeInfo().IsGenericType && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(IQueryHandler<,>));
-                    }))
-                    .AsSelf()
-                    .WithTransientLifetime()
-            );
         }
     }
 }
