@@ -34,8 +34,8 @@ namespace Erden.Core
         /// <summary>
         /// Add all handlers specified type to <see cref="IServiceCollection"/>
         /// </summary>
-        /// <typeparam name="T">Handler type</typeparam>
-        public void AddHandlers<T>()
+        /// <param name="type">Handler type</param>
+        public void AddHandlers(Type type)
         {
             foreach (var assembly in assemblies)
             {
@@ -46,7 +46,7 @@ namespace Erden.Core
                             return
                                 allInterfaces.Any(y =>
                                     y.GetTypeInfo().IsGenericType
-                                    && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(T));
+                                    && y.GetTypeInfo().GetGenericTypeDefinition() == type);
                         }))
                         .AsSelf()
                         .WithTransientLifetime()

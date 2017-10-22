@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Erden.Core</PackageId>
     <Title>Erden.Core</Title>
-    <PackageVersion>1.0.0-rc2</PackageVersion>
+    <PackageVersion>1.0.0-rc3</PackageVersion>
     <Authors>darvit</Authors>
     <Description>Erden core</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
