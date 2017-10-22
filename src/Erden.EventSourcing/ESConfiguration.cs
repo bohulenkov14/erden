@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-using Erden.EventSourcing.Core;
+using Erden.Core;
 
 namespace Erden.EventSourcing
 {
@@ -34,7 +34,7 @@ namespace Erden.EventSourcing
             }
 
             var registrator = new AutoRegistrator(services.BuildServiceProvider());
-            registrator.Register(typeof(IEventHandler<>), typeof(IEventHandlerRegistrator));
+            registrator.Register(typeof(IEventHandler<>), typeof(IEventHandlerRegistrator), "Handle");
         }
 
         public ESConfiguration UseDefaultEventBus()
