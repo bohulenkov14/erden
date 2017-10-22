@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Runtime.Loader;
 using Microsoft.DotNet.InternalAbstractions;
 using Microsoft.Extensions.DependencyModel;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Erden.Core
 {
@@ -14,11 +15,43 @@ namespace Erden.Core
     /// </summary>
     public sealed class AutoRegistrator
     {
-        private IServiceProvider provider;
+        private readonly IServiceCollection services;
+        private readonly ICollection<Assembly> assemblies = new List<Assembly>();
 
-        public AutoRegistrator(IServiceProvider provider)
+        public AutoRegistrator(IServiceCollection services)
         {
-            this.provider = provider;
+            this.services = services;
+
+            var runtimeId = RuntimeEnvironment.GetRuntimeIdentifier();
+            var assemblyNames = DependencyContext.Default.GetRuntimeAssemblyNames(runtimeId);
+            var loadContext = AssemblyLoadContext.Default;
+            foreach (var assemblyName in assemblyNames)
+            {
+                assemblies.Add(loadContext.LoadFromAssemblyName(assemblyName));
+            }
+        }
+
+        /// <summary>
+        /// Add all handlers specified type to <see cref="IServiceCollection"/>
+        /// </summary>
+        /// <typeparam name="T">Handler type</typeparam>
+        public void AddHandlers<T>()
+        {
+            foreach (var assembly in assemblies)
+            {
+                services.Scan(scan => scan
+                    .FromAssemblies(assembly)
+                        .AddClasses(classes => classes.Where(x => {
+                            var allInterfaces = x.GetInterfaces();
+                            return
+                                allInterfaces.Any(y =>
+                                    y.GetTypeInfo().IsGenericType
+                                    && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(T));
+                        }))
+                        .AsSelf()
+                        .WithTransientLifetime()
+                );
+            }
         }
 
         /// <summary>
@@ -29,6 +62,8 @@ namespace Erden.Core
         /// <param name="method">Method in handler</param>
         public void Register(Type handlerType, Type registrator, string method)
         {
+            var provider = services.BuildServiceProvider();
+
             var runtimeId = RuntimeEnvironment.GetRuntimeIdentifier();
             var assemblies = DependencyContext.Default.GetRuntimeAssemblyNames(runtimeId);
             var loadContext = AssemblyLoadContext.Default;
