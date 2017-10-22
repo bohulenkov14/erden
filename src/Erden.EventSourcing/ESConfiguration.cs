@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 using Erden.Core;
 
@@ -13,10 +10,6 @@ namespace Erden.EventSourcing
         /// DI container
         /// </summary>
         private readonly IServiceCollection services;
-        /// <summary>
-        /// Assemblies, where command and query handlers placed
-        /// </summary>
-        private readonly List<Assembly> assemblies = new List<Assembly>();
 
         public ESConfiguration(IServiceCollection services)
         {
@@ -28,12 +21,8 @@ namespace Erden.EventSourcing
         /// </summary>
         public void Build()
         {
-            foreach (var assembly in assemblies)
-            {
-                RegisterHandlers(assembly);
-            }
-
-            var registrator = new AutoRegistrator(services.BuildServiceProvider());
+            var registrator = new AutoRegistrator(services);
+            registrator.AddHandlers(typeof(IEventHandler<>);
             registrator.Register(typeof(IEventHandler<>), typeof(IEventHandlerRegistrator), "Handle");
         }
 
@@ -49,32 +38,6 @@ namespace Erden.EventSourcing
         {
             services.AddSingleton<IEventStore, InMemoryEventStore>();
             return this;
-        }
-
-        public ESConfiguration WithAssembly(Assembly assembly)
-        {
-            assemblies.Add(assembly);
-            return this;
-        }
-
-        /// <summary>
-        /// Register command and query handlers
-        /// </summary>
-        /// <param name="assembly">Assembly for registration</param>
-        private void RegisterHandlers(Assembly assembly)
-        {
-            services.Scan(scan => scan
-                .FromAssemblies(assembly)
-                    .AddClasses(classes => classes.Where(x => {
-                        var allInterfaces = x.GetInterfaces();
-                        return
-                            allInterfaces.Any(y => 
-                                y.GetTypeInfo().IsGenericType
-                                && y.GetTypeInfo().GetGenericTypeDefinition() == typeof(IEventHandler<>));
-                    }))
-                    .AsSelf()
-                    .WithTransientLifetime()
-            );
         }
     }
 }
