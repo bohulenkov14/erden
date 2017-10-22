@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-using Erden.Cqrs.Core;
+using Erden.Core;
 
 namespace Erden.Cqrs
 {
@@ -37,8 +37,8 @@ namespace Erden.Cqrs
             }
 
             var registrator = new AutoRegistrator(services.BuildServiceProvider());
-            registrator.Register(typeof(ICommandHandler<>), typeof(ICommandHandlerRegistrator));
-            registrator.Register(typeof(IQueryHandler<,>), typeof(IQueryHandlerRegistrator));
+            registrator.Register(typeof(ICommandHandler<>), typeof(ICommandHandlerRegistrator), "Execute");
+            registrator.Register(typeof(IQueryHandler<,>), typeof(IQueryHandlerRegistrator), "Execute");
         }
 
         /// <summary>
