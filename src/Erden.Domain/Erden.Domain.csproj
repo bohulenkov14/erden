@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Erden.Domain</PackageId>
     <Title>Erden.Domain</Title>
-    <PackageVersion>1.0.0-rc1</PackageVersion>
+    <PackageVersion>1.0.0-rc2</PackageVersion>
     <Authors>darvit</Authors>
     <Description>DDD</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

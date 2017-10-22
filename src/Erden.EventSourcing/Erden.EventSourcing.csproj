@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Erden.EventSourcing</PackageId>
     <Title>Erden.EventSourcing</Title>
-    <PackageVersion>1.0.0-rc1</PackageVersion>
+    <PackageVersion>1.0.0-rc2</PackageVersion>
     <Authors>darvit</Authors>
     <Description>Event Sourcing</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
