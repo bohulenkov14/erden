@@ -33,8 +33,7 @@ namespace Erden.EventSourcing.Tests
         {
             var services = new ServiceCollection();
             var config = new ESConfiguration(services)
-                .UseDefaultEventBus()
-                .WithAssembly(typeof(InMemoryEventBusTest).GetTypeInfo().Assembly);
+                .UseDefaultEventBus();
             config.Build();
 
             return services.BuildServiceProvider();

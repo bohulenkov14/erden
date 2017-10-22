@@ -52,8 +52,7 @@ namespace Erden.Domain.Tests
             var services = new ServiceCollection();
             var config = new ESConfiguration(services)
                 .UseDefaultEventBus()
-                .UseTestEventStore()
-                .WithAssembly(typeof(AggregateStorageRootTest).GetTypeInfo().Assembly);
+                .UseTestEventStore();
             config.Build();
             new DomainConfiguration(services).Build();
 

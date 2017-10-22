@@ -22,7 +22,7 @@ namespace Erden.EventSourcing
         public void Build()
         {
             var registrator = new AutoRegistrator(services);
-            registrator.AddHandlers(typeof(IEventHandler<>);
+            registrator.AddHandlers(typeof(IEventHandler<>));
             registrator.Register(typeof(IEventHandler<>), typeof(IEventHandlerRegistrator), "Handle");
         }
 

@@ -54,8 +54,7 @@ namespace Erden.Cqrs.Tests
             var services = new ServiceCollection();
             var config = new CqrsConfiguration(services)
                 .UseDefaultCommandBus()
-                .UseDefaultDataStorage()
-                .WithAssembly(typeof(InMemoryCommandBusTest).GetTypeInfo().Assembly);
+                .UseDefaultDataStorage();
             config.Build();
 
             return services.BuildServiceProvider();

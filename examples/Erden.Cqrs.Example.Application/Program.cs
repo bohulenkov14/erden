@@ -18,8 +18,7 @@ namespace Erden.Cqrs.Example.Application
             services = new ServiceCollection();
             var cqrsConfiguration = new CqrsConfiguration(services)
                 .UseDefaultCommandBus()
-                .UseDefaultDataStorage()
-                .WithAssembly(typeof(Program).GetTypeInfo().Assembly);
+                .UseDefaultDataStorage();
             cqrsConfiguration.Build();
 
             var provider = services.BuildServiceProvider();
