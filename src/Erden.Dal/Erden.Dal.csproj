@@ -12,4 +12,8 @@
     <PackageTags>dal</PackageTags>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Erden.Core" Version="1.0.0-rc3" />
+  </ItemGroup>
+
 </Project>
