@@ -13,5 +13,6 @@ namespace Erden.Cqrs
         /// <typeparam name="T">Command type</typeparam>
         /// <param name="command">Command</param>
         Task Send<T>(T command) where T : ICommand;
+        Task Send<T>(params object[] args) where T : ICommand;
     }
 }

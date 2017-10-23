@@ -28,5 +28,12 @@ namespace Erden.Dal
 
             throw new Exception();
         }
+
+        public Task<TResult> Retrieve<T, TResult>(params object[] args)
+            where T : IFetchRequest<TResult>
+            where TResult : class
+        {
+            return Retrieve((T)Activator.CreateInstance(typeof(T), args));
+        }
     }
 }

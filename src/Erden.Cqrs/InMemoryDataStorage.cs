@@ -19,6 +19,13 @@ namespace Erden.Cqrs
            throw new Exception();
         }
 
+        public Task<TResult> Retrieve<T, TResult>(params object[] args)
+            where T : IQuery<TResult>
+            where TResult : class
+        {
+            return Retrieve((T)Activator.CreateInstance(typeof(T), args));
+        }
+
         public void Register<T, TResult>(Func<T, Task<TResult>> handler)
             where T : IQuery<TResult>
             where TResult : class

@@ -27,5 +27,10 @@ namespace Erden.Cqrs
 
             await handler.Invoke(command);
         }
+
+        public Task Send<T>(params object[] args) where T : ICommand
+        {
+            return Send((T)Activator.CreateInstance(typeof(T), args));
+        }
     }
 }

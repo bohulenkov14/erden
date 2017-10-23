@@ -27,5 +27,10 @@ namespace Erden.Dal
 
             await handler.Invoke(request);
         }
+
+        public Task Send<T>(params object[] args) where T : IChangeRequest
+        {
+            return Send((T)Activator.CreateInstance(typeof(T), args));
+        }
     }
 }

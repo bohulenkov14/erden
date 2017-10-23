@@ -14,5 +14,8 @@ namespace Erden.Cqrs
         /// <param name="query">Query</param>
         /// <returns>Query result</returns>
         Task<TResult> Retrieve<TResult>(IQuery<TResult> query) where TResult : class;
+        Task<TResult> Retrieve<T, TResult>(params object[] args)
+            where TResult : class
+            where T : IQuery<TResult>;
     }
 }
