@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Erden.Cqrs</PackageId>
     <Title>Erden.Cqrs</Title>
-    <PackageVersion>1.0.0-rc2</PackageVersion>
+    <PackageVersion>1.0.0-rc3</PackageVersion>
     <Authors>darvit</Authors>
     <Description>CQRS</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
