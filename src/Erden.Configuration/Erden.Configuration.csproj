@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Erden.Configuration</PackageId>
     <Title>Erden.Configuration</Title>
-    <PackageVersion>1.0.0-rc3</PackageVersion>
+    <PackageVersion>1.0.0-rc4</PackageVersion>
     <Authors>darvit</Authors>
     <Description>Erden config</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -14,10 +14,10 @@
 
   <ItemGroup>
     <PackageReference Include="Erden.Core" Version="1.0.0-rc3" />
-    <PackageReference Include="Erden.Cqrs" Version="1.0.0-rc1" />
-    <PackageReference Include="Erden.Dal" Version="1.0.0-rc2" />
-    <PackageReference Include="Erden.Domain" Version="1.0.0-rc1" />
-    <PackageReference Include="Erden.EventSourcing" Version="1.0.0-rc1" />
+    <PackageReference Include="Erden.Cqrs" Version="1.0.0-rc3" />
+    <PackageReference Include="Erden.Dal" Version="1.0.0-rc4" />
+    <PackageReference Include="Erden.Domain" Version="1.0.0-rc2" />
+    <PackageReference Include="Erden.EventSourcing" Version="1.0.0-rc2" />
   </ItemGroup>
 
 </Project>
