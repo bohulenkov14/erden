@@ -13,7 +13,7 @@ namespace Erden.Cqrs
         /// </summary>
         Guid Id { get; }
         /// <summary>
-        /// Command timestamp
+        /// Call timestamp
         /// </summary>
         long Timestamp { get; }
     }

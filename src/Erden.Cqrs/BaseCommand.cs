@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
@@ -16,8 +15,14 @@ namespace Erden.Cqrs
             Timestamp = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         }
 
+        /// <summary>
+        /// Command ID
+        /// </summary>
         [JsonProperty("id")]
         public Guid Id { get; private set; }
+        /// <summary>
+        /// Call timestamp
+        /// </summary>
         [JsonProperty("timestamp")]
         public long Timestamp { get; private set; }
     }
