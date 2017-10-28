@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using Erden.Cqrs.Exceptions;
+
 namespace Erden.Cqrs
 {
     /// <summary>
@@ -40,7 +42,7 @@ namespace Erden.Cqrs
                 throw new ArgumentNullException("command");
 
             if (!handlers.TryGetValue(typeof(T), out var handler))
-                throw new Exception();
+                throw new CommandHandlerNotFoundException(typeof(T));
 
             await handler.Invoke(command);
         }

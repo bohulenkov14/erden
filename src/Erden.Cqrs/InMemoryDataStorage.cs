@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+using Erden.Cqrs.Exceptions;
+
 namespace Erden.Cqrs
 {
     /// <summary>
@@ -44,7 +46,7 @@ namespace Erden.Cqrs
                 return handler.DynamicInvoke(query) as Task<T>;
             }
 
-            throw new Exception();
+            throw new QueryHandlerNotFoundException(query.GetType());
         }
         /// <summary>
         /// Execute query
