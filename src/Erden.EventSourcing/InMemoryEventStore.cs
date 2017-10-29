@@ -17,6 +17,10 @@ namespace Erden.EventSourcing
         private static Dictionary<Guid, List<IEvent>> store
             = new Dictionary<Guid, List<IEvent>>();
 
+        /// <summary>
+        /// Initialze a new instance of <see cref="InMemoryEventStore"/>
+        /// </summary>
+        /// <param name="publisher">Event publisher</param>
         public InMemoryEventStore(IEventPublisher publisher)
         {
             this.publisher = publisher;
