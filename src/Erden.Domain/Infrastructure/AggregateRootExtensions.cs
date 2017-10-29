@@ -3,6 +3,9 @@ using System.Reflection;
 
 namespace Erden.Domain.Infrastructure
 {
+    /// <summary>
+    /// Extension for calling private Apply method
+    /// </summary>
     public static class AggregateRootExtensions
     {
         public static void CallApply(this AggregateRoot root, object param)
