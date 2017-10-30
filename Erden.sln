@@ -29,9 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Demo.Application", "e
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Configuration", "src\Erden.Configuration\Erden.Configuration.csproj", "{DFCCD342-1A96-4A5E-AD0C-FEB5FDC846B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erden.Dal", "src\Erden.Dal\Erden.Dal.csproj", "{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Core", "src\Erden.Core\Erden.Core.csproj", "{622E4221-9793-4452-A664-519560AD4404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Erden.Dal", "src\Erden.Dal\Erden.Dal.csproj", "{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,10 +81,6 @@ Global
 		{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0029925-BE49-4D7A-A4BE-8FE8956D8CCE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{622E4221-9793-4452-A664-519560AD4404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{622E4221-9793-4452-A664-519560AD4404}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{622E4221-9793-4452-A664-519560AD4404}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{622E4221-9793-4452-A664-519560AD4404}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

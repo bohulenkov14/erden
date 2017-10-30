@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Erden.Domain</PackageId>
     <Title>Erden.Domain</Title>
-    <PackageVersion>1.0.0-rc2</PackageVersion>
+    <PackageVersion>1.0.0-rc5</PackageVersion>
     <Authors>darvit</Authors>
     <Description>DDD</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -13,7 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Erden.EventSourcing" Version="1.0.0-rc1" />
+    <PackageReference Include="Erden.Configuration" Version="1.0.0-rc5" />
+    <PackageReference Include="Erden.EventSourcing" Version="1.0.0-rc5" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 

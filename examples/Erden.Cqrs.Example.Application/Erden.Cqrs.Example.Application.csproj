@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Erden.Configuration\Erden.Configuration.csproj" />
     <ProjectReference Include="..\..\src\Erden.Cqrs\Erden.Cqrs.csproj" />
   </ItemGroup>
 

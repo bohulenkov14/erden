@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Erden.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -32,7 +33,8 @@ namespace Erden.EventSourcing.Tests
         private ServiceProvider Configure()
         {
             var services = new ServiceCollection();
-            var config = new ESConfiguration(services)
+            var config = new ErdenConfig(services)
+                .AddEventSourcing()
                 .UseDefaultEventBus();
             config.Build();
 

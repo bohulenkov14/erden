@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 using Erden.EventSourcing;
+using Erden.Configuration;
 
 namespace Erden.Domain.Tests
 {
@@ -50,11 +51,12 @@ namespace Erden.Domain.Tests
         private ServiceProvider Configure()
         {
             var services = new ServiceCollection();
-            var config = new ESConfiguration(services)
+            var config = new ErdenConfig(services)
+                .AddEventSourcing()
                 .UseDefaultEventBus()
-                .UseTestEventStore();
+                .AddEventStoreTarget<InMemoryEventStore>();
             config.Build();
-            new DomainConfiguration(services).Build();
+            new ErdenConfig(services).AddDomain().Build();
 
             return services.BuildServiceProvider();
         }

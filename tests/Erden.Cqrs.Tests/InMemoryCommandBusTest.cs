@@ -1,8 +1,9 @@
-﻿using System.Reflection;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 
 using Xunit;
+
+using Erden.Configuration;
 
 namespace Erden.Cqrs.Tests
 {
@@ -53,7 +54,8 @@ namespace Erden.Cqrs.Tests
         private ServiceProvider Configure()
         {
             var services = new ServiceCollection();
-            var config = new CqrsConfiguration(services)
+            var config = new ErdenConfig(services)
+                .AddCqrs()
                 .UseDefaultCommandBus()
                 .UseDefaultDataStorage();
             config.Build();

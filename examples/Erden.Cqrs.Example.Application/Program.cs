@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
+using Erden.Configuration;
 using Erden.Cqrs.Example.Application.Commands;
 using Erden.Cqrs.Example.Application.Queries;
 
@@ -16,7 +16,8 @@ namespace Erden.Cqrs.Example.Application
             Console.WriteLine("Erden CQRS example");
             Console.WriteLine();
             services = new ServiceCollection();
-            var cqrsConfiguration = new CqrsConfiguration(services)
+            var cqrsConfiguration = new ErdenConfig(services)
+                .AddCqrs()
                 .UseDefaultCommandBus()
                 .UseDefaultDataStorage();
             cqrsConfiguration.Build();
