@@ -69,7 +69,7 @@ namespace Erden.Cqrs
             where T : IQuery<TResult>
             where TResult : class
         {
-            throw new NotImplementedException();
+            return Retrieve((T)Activator.CreateInstance(typeof(T)));
         }
     }
 }
