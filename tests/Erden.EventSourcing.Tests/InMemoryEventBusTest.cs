@@ -1,11 +1,10 @@
-﻿using Erden.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+﻿using System;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+
 using Xunit;
+
+using Erden.Configuration;
 
 namespace Erden.EventSourcing.Tests
 {

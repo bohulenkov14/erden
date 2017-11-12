@@ -1,5 +1,8 @@
 ﻿namespace Erden.Dal
 {
-    public interface IFetchRequest<TResult> where TResult : class
-    { }
+    /// <summary>
+    /// Fetch request interface
+    /// </summary>
+    /// <typeparam name="TResult">Result typr</typeparam>
+    public interface IFetchRequest<TResult> where TResult : class { }
 }

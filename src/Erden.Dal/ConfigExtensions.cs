@@ -4,8 +4,14 @@ using Erden.Configuration;
 
 namespace Erden.Dal
 {
+    /// <summary>
+    /// DAL config extensions
+    /// </summary>
     public static class ConfigExtensions
     {
+        /// <summary>
+        /// Add DAL
+        /// </summary>
         public static ErdenConfig AddDal(this ErdenConfig config)
         {
             config.AddToRegistration(typeof(IChangeHandler<>), typeof(IChangeHandlerRegistrator), "Execute");
@@ -13,6 +19,9 @@ namespace Erden.Dal
             return config;
         }
 
+        /// <summary>
+        /// Use default fetch source - <see cref="InMemoryStorage"/>
+        /// </summary>
         public static ErdenConfig UseDefaultFetchSource(this ErdenConfig config)
         {
             var inMemoryStorage = new InMemoryStorage();
@@ -21,6 +30,9 @@ namespace Erden.Dal
             return config;
         }
 
+        /// <summary>
+        /// Use default changes bus - <see cref="InMemoryChangesBus"/>
+        /// </summary>
         public static ErdenConfig UseDefaultChangeBus(this ErdenConfig config)
         {
             var inMemoryChangesBus = new InMemoryChangesBus();

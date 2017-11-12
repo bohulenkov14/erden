@@ -4,8 +4,14 @@ using Erden.Configuration;
 
 namespace Erden.Cqrs
 {
+    /// <summary>
+    /// CQRS config extencions
+    /// </summary>
     public static class ConfigExtensions
     {
+        /// <summary>
+        /// Add CQRS
+        /// </summary>
         public static ErdenConfig AddCqrs(this ErdenConfig config)
         {
             config.AddToRegistration(typeof(ICommandHandler<>), typeof(ICommandHandlerRegistrator), "Execute");

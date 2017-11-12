@@ -18,7 +18,7 @@ namespace Erden.EventSourcing
             = new Dictionary<Guid, List<IEvent>>();
 
         /// <summary>
-        /// Initialze a new instance of <see cref="InMemoryEventStore"/>
+        /// Initialze a new instance of the <see cref="InMemoryEventStore"/> class
         /// </summary>
         /// <param name="publisher">Event publisher</param>
         public InMemoryEventStore(IEventPublisher publisher)

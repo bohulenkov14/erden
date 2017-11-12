@@ -12,13 +12,24 @@ namespace Erden.Configuration
 {
     internal sealed class AutoRegistrator
     {
+        /// <summary>
+        /// DI container
+        /// </summary>
         private readonly IServiceCollection services;
+        /// <summary>
+        /// Assemblies in solution
+        /// </summary>
         private readonly ICollection<Assembly> assemblies = new List<Assembly>();
 
+        /// <summary>
+        /// Initialize a new instance of <see cref="AutoRegistrator"/>
+        /// </summary>
+        /// <param name="services">DI container</param>
         public AutoRegistrator(IServiceCollection services)
         {
             this.services = services;
 
+            // Scan all assemblies in solution for handler registration
             var runtimeId = RuntimeEnvironment.GetRuntimeIdentifier();
             var assemblyNames = DependencyContext.Default.GetRuntimeAssemblyNames(runtimeId);
             var loadContext = AssemblyLoadContext.Default;
