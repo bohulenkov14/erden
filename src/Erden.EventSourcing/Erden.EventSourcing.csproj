@@ -4,17 +4,16 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>Erden.EventSourcing</PackageId>
     <Title>Erden.EventSourcing</Title>
-    <PackageVersion>1.0.0-rc5</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <Authors>darvit</Authors>
     <Description>Event Sourcing</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Release candidate</PackageReleaseNotes>
+    <PackageReleaseNotes>First release</PackageReleaseNotes>
     <PackageTags>es, event sourcing</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Erden.Configuration" Version="1.0.0-rc5" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.0" />
+    <PackageReference Include="Erden.Configuration" Version="1.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 

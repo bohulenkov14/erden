@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 
 namespace Erden.EventSourcing
 {
@@ -11,23 +10,10 @@ namespace Erden.EventSourcing
     public sealed class InMemoryEventBus : IEventPublisher, IEventHandlerRegistrator
     {
         /// <summary>
-        /// Logger
-        /// </summary>
-        private readonly ILogger logger;
-        /// <summary>
         /// Event handlers
         /// </summary>
         private readonly Dictionary<Type, List<Delegate>> handlers
             = new Dictionary<Type, List<Delegate>>();
-
-        /// <summary>
-        /// Initialize a new instance of the <see cref="InMemoryEventBus"/> class
-        /// </summary>
-        /// <param name="logger">Logger</param>
-        public InMemoryEventBus(ILogger logger)
-        {
-            this.logger = logger;
-        }
 
         /// <summary>
         /// Publish event
@@ -42,14 +28,7 @@ namespace Erden.EventSourcing
                 {
                     foreach (var handler in list)
                     {
-                        var result = handler.DynamicInvoke(@event) as Task;
-                        if (result.Status == TaskStatus.Faulted)
-                        {
-                            logger.LogError(
-                                result.Exception.InnerException,
-                                $"Error while processing event of type {@event.GetType()}, event: {@event}"
-                            );
-                        }
+                        handler.DynamicInvoke(@event);
                     }
                 }
             });

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 using Erden.Configuration;
 
@@ -19,9 +18,9 @@ namespace Erden.EventSourcing
             return config;
         }
 
-        public static ErdenConfig UseDefaultEventBus(this ErdenConfig config, ILogger logger)
+        public static ErdenConfig UseDefaultEventBus(this ErdenConfig config)
         {
-            var inMemoryEventBus = new InMemoryEventBus(logger);
+            var inMemoryEventBus = new InMemoryEventBus();
             config.Services.AddSingleton<IEventHandlerRegistrator>(provider => inMemoryEventBus);
             config.Services.AddSingleton<IEventPublisher>(provider => inMemoryEventBus);
             return config;

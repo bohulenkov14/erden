@@ -49,11 +49,11 @@ namespace Erden.Domain.Tests
         private ServiceProvider Configure()
         {
             var services = new ServiceCollection();
-            var config = new ErdenConfig(services)
+            /*var config = new ErdenConfig(services)
                 .AddEventSourcing()
                 .UseDefaultEventBus()
                 .AddEventStoreTarget<InMemoryEventStore>();
-            config.Build();
+            config.Build();*/
             new ErdenConfig(services).AddDomain().Build();
 
             return services.BuildServiceProvider();

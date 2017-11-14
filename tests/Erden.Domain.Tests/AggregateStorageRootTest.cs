@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 using Xunit;
 
@@ -50,6 +51,7 @@ namespace Erden.Domain.Tests
 
         private ServiceProvider Configure()
         {
+            LoggerFactory factory = new LoggerFactory();
             var services = new ServiceCollection();
             var config = new ErdenConfig(services)
                 .AddEventSourcing()
