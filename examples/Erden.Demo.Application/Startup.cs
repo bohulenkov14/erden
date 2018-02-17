@@ -4,6 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using Erden.EventSourcing.Targets.EventStore;
+using Erden.Cqrs;
+using Erden.Domain;
+using Erden.EventSourcing;
 using Erden.Configuration;
 
 namespace Erden.Demo.Application
@@ -31,7 +34,12 @@ namespace Erden.Demo.Application
                 .UseDefaultCommandBus()
                 .UseDefaultDataStorage()
                 .UseDefaultEventBus()
+                .AddDomain()
                 .AddEventStoreTarget<EventStoreTarget>();
+
+            erden.AddToRegistration(typeof(ICommandHandler<>), typeof(ICommandHandlerRegistrator), "Execute");
+            erden.AddToRegistration(typeof(IEventHandler<>), typeof(IEventHandlerRegistrator), "Handle");
+
             erden.Build();
         }
 

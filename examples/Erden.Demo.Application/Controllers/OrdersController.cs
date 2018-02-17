@@ -21,8 +21,10 @@ namespace Erden.Demo.Application.Controllers
         [HttpPost]
         public async Task<Guid> Post([FromBody] CreateOrderRequest request)
         {
+            Console.WriteLine("Started processing request");
             var id = Guid.NewGuid();
             await bus.Send(new OpenOrderCommand(id, request));
+            Console.WriteLine("Started processing request");
             return id;
         }
 

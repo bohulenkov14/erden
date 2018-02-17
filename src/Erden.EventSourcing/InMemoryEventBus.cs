@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,16 +23,14 @@ namespace Erden.EventSourcing
         /// <param name="event">Event to publish</param>
         public void Publish<T>(T @event) where T : IEvent
         {
-            Task.Run(() =>
+            if (handlers.TryGetValue(@event.GetType(), out var list))
             {
-                if (handlers.TryGetValue(@event.GetType(), out var list))
-                {
-                    foreach (var handler in list)
-                    {
-                        handler.DynamicInvoke(@event);
-                    }
-                }
-            });
+                var handleTasks = list
+                    .Select(handler => (Task)handler.DynamicInvoke(@event))
+                    .ToArray();
+
+                Task.WaitAll(handleTasks);
+            }
         }
         /// <summary>
         /// Register handler for events of provided type
